@@ -30,7 +30,7 @@ public class Car {
             this.engineVolume = DEFAULT_ENGINE;
         }
 
-        if (isValid(productionCountry)) {
+        if (isValid(productionYear)) {
             this.productionYear = productionYear;
         } else {
             this.productionYear = DEFAULT_YEAR;
@@ -73,7 +73,7 @@ public class Car {
     }
 
     private boolean isValid(double field) {
-        return field >= 0;
+        return field > 0;
     }
 
 

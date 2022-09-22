@@ -36,7 +36,7 @@ public class Main {
                 2.4, 2018);
         var hyundai = new Car("Hyundai", "Avante", "Южной Корее", "оранжевый",
                 1.6, 2016);
-        var mazda = new Car("Mazda", "CX 5", "Японии");
+        var mazda = new Car("Mazda", "CX 5", "Японии", "синий", 2, -1);
 
         System.out.println(lada);
         System.out.println(audi);

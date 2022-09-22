@@ -6,22 +6,20 @@ public class Human {
     private final String name;
     private final String town;
     private final int yearOfBirth;
-
     private final String job;
-    static private final String defaultMsg = "(Информация не указана)";
+    static private final String DEFAULT = "(Информация не указана)";
 
-    public Human(String name, String town, int years, String job) {
+    public Human(String name, String town, int age, String job) {
 
         this.name = getValid(name);
         this.town = getValid(town);
         this.job = getValid(job);
 
-        if (years <= 0) {
+        if (age < 0) {
             yearOfBirth = 0;
         } else {
-            yearOfBirth = Math.abs(LocalDate.now().getYear() - years);
+            yearOfBirth = Math.abs(LocalDate.now().getYear() - age);
         }
-
     }
 
     public Human(String name, String town, String job) {
@@ -29,15 +27,15 @@ public class Human {
     }
 
     public Human(String name, String town) {
-        this(name, town, defaultMsg);
+        this(name, town, DEFAULT);
     }
 
     public Human(String name) {
-        this(name, defaultMsg);
+        this(name, DEFAULT);
     }
 
     public Human() {
-        this(defaultMsg);
+        this(DEFAULT);
     }
 
 
@@ -55,8 +53,6 @@ public class Human {
         if (isValid(field)) {
             return field.trim();
         }
-        return defaultMsg;
+        return DEFAULT;
     }
-
-
 }
