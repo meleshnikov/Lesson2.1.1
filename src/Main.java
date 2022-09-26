@@ -1,4 +1,4 @@
-import car.Car;
+import transport.Car;
 import flw.Bouquet;
 import flw.Flower;
 import hmn.Human;
@@ -7,8 +7,8 @@ public class Main {
     public static void main(String[] args) {
 //        testHuman();
 //        System.out.println();
-//        testCar();
-        testFlower();
+        testCar();
+//        testFlower();
 
     }
 
@@ -33,23 +33,27 @@ public class Main {
 
     private static void testCar() {
         var lada = new Car("Lada", "Grande", "России", "жёлтый",
-                1.7, 2015);
+                1.7, 2015, null, 0);
         var audi = new Car("Audi", "A8 50 L TDI quattro", "Германии", "чёрный",
-                3.0, 2020);
+                3.0, 2020, "хетчбэк", 5);
         var bmw = new Car("BMW", "Z8", "Германии", "чёрный",
-                3.0, 2021);
+                3.0, 2021, "седан", 4);
         var kia = new Car("Kia", "Sportage 4 поколение", "Южной Корее", "красный",
-                2.4, 2018);
+                2.4, 2018, "", 3);
         var hyundai = new Car("Hyundai", "Avante", "Южной Корее", "оранжевый",
-                1.6, 2016);
-        var mazda = new Car("Mazda", "CX 5", "Японии", "синий", 2, -1);
+                1.6, 2016, "универсал", 4);
 
         System.out.println(lada);
         System.out.println(audi);
         System.out.println(bmw);
         System.out.println(kia);
         System.out.println(hyundai);
-        System.out.println(mazda);
+        lada.setRegNumber("у709ос90");
+        System.out.println(lada.getAllInfo());
+        audi.setSeasonTires();
+        System.out.println(audi.getAllInfo());
+        System.out.println(lada.isValidRegNumber());
+
     }
 
     private static void testFlower() {
