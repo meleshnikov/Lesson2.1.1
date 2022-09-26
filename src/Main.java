@@ -16,6 +16,7 @@ public class Main {
         var andrei = new Human("Андрей");
         var ivan = new Human("Ваня", "Казань");
         var noname = new Human();
+        var vladimir = new Human("Владимир", "Казань", 21);
         System.out.println(maxim);
         System.out.println(ann);
         System.out.println(kate);
@@ -23,6 +24,7 @@ public class Main {
         System.out.println(andrei);
         System.out.println(ivan);
         System.out.println(noname);
+        System.out.println(vladimir);
     }
 
     private static void testCar() {

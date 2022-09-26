@@ -4,8 +4,8 @@ import java.time.LocalDate;
 
 public class Human {
     private final String name;
-    private final String town;
-    private final int yearOfBirth;
+    private String town;
+    private int yearOfBirth;
     private final String job;
     static private final String DEFAULT = "(Информация не указана)";
 
@@ -21,6 +21,11 @@ public class Human {
             yearOfBirth = Math.abs(LocalDate.now().getYear() - age);
         }
     }
+
+    public Human(String name, String town, int age) {
+        this(name, town, age, DEFAULT);
+    }
+
 
     public Human(String name, String town, String job) {
         this(name, town, 0, job);
@@ -55,4 +60,26 @@ public class Human {
         }
         return DEFAULT;
     }
+
+    public String getTown() {
+        return town;
+    }
+
+    public int getYearOfBirth() {
+        return yearOfBirth;
+    }
+
+    public void setTown(String town) {
+        this.town = getValid(town);
+    }
+
+    public void setYearOfBirth(int year) {
+        if (year < 0) {
+            yearOfBirth = 0;
+        } else {
+            yearOfBirth = Math.abs(LocalDate.now().getYear() - year);
+        }
+    }
+
+
 }
