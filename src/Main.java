@@ -1,11 +1,15 @@
 import car.Car;
+import flw.Bouquet;
+import flw.Flower;
 import hmn.Human;
 
 public class Main {
     public static void main(String[] args) {
-        testHuman();
-        System.out.println();
-        testCar();
+//        testHuman();
+//        System.out.println();
+//        testCar();
+        testFlower();
+
     }
 
     private static void testHuman() {
@@ -47,4 +51,23 @@ public class Main {
         System.out.println(hyundai);
         System.out.println(mazda);
     }
+
+    private static void testFlower() {
+        var rosa = new Flower("Роза обыкновенная", "Голандии", 35.59);
+        var chrysanthemum = new Flower("Хризантема", 15, 5);
+        var peony = new Flower("Пион", "Англии", 69.9, 1);
+        var gypsophila = new Flower("Гипсофила", "Турции", 19.5, 10);
+        System.out.println(rosa);
+        System.out.println(chrysanthemum);
+        System.out.println(peony);
+        System.out.println(gypsophila);
+
+        Bouquet bq = new Bouquet(rosa, chrysanthemum, peony, gypsophila);
+        System.out.println(bq.getCost());
+        System.out.println(bq.getLifeSpan());
+        System.out.println(bq);
+
+    }
+
+
 }
